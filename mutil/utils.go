@@ -7,7 +7,10 @@ import (
 	"io/ioutil"
 	"math/rand"
 	"reflect"
+	"strings"
 	"time"
+
+	"github.com/google/uuid"
 )
 
 // gzip
@@ -19,14 +22,12 @@ func GZipDecompress(input []byte) ([]byte, error) {
 	}
 	defer reader.Close()
 
-
 	result, readErr := ioutil.ReadAll(reader)
 	if readErr != nil {
 		return nil, readErr
 	}
 	return result, nil
 }
-
 
 func GZipCompress(input string) ([]byte, error) {
 	var buf bytes.Buffer
@@ -53,11 +54,11 @@ func GZipCompress(input string) ([]byte, error) {
 // GetRandomString  
 func GetRandomString(l int) string {
 	str := "0123456789abcdefghijklmnopqrstuvwxyz"
-	bytes := []byte(str)
+	bys := []byte(str)
 	result := []byte{}
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	for i := 0; i < l; i++ {
-		result = append(result, bytes[r.Intn(len(bytes))])
+		result = append(result, bys[r.Intn(len(bys))])
 	}
 	return string(result)
 }
@@ -71,6 +72,16 @@ func StructToMap(obj interface{}) map[string]interface{} {
 		result[vType.Field(i).Name] = v.Field(i).String()
 	}
 	return result
+}
+
+// return uuid
+func UUID() string {
+	return strings.Replace(uuid.New().String(), "-", "", 32)
+}
+
+// return uuid and no split line
+func UUIDNoSplit() string {
+	return uuid.New().String()
 }
 
 // Verification attributes args is verification field
