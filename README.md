@@ -1,5 +1,11 @@
 # com
-日常简单实用工具
+日常使用的小资源
+
+#### mlog - 日志
+
+#### mutil - 工具
+
+#### ws - websocket封装包（基于gorilla/websocket分装）
 
 
 ## 常用的第三方包
