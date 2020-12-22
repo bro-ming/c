@@ -3,6 +3,9 @@ package mutil
 import (
 	"bytes"
 	"compress/gzip"
+	"crypto/hmac"
+	"crypto/sha256"
+	"encoding/base64"
 	"errors"
 	"io/ioutil"
 	"math/rand"
@@ -100,4 +103,15 @@ func Verification(s interface{}, args ...string) error {
 	}
 
 	return nil
+}
+
+// SHA256Base64 返回sha256后base64加密
+func SHA256Base64(secret, params string) (string, error) {
+	mac := hmac.New(sha256.New, []byte(secret))
+	_, err := mac.Write([]byte(params))
+	if err != nil {
+		return "", err
+	}
+	signByte := mac.Sum(nil)
+	return base64.StdEncoding.EncodeToString(signByte), nil
 }
