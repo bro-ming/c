@@ -101,30 +101,3 @@ func Verification(s interface{}, args ...string) error {
 
 	return nil
 }
-
-// TimeMinAgo 返回前一分钟整秒
-func TimeMinAgo(ts int64) int64 {
-	Ts := time.Unix(ts-60, ts)
-
-	//小时Ts
-	hour := Ts.Hour()
-
-	// 分钟Ts
-	minute := Ts.Minute()
-	mu := time.Date(Ts.Year(), Ts.Month(), Ts.Day(), hour, minute, 0, 0, Ts.Location())
-	return mu.Unix()
-}
-
-// TimeMinZero 返回时间戳的分钟整秒
-func TimeMinZero(ts int64) int64 {
-	timer := time.Unix(ts, 0)
-	z := time.Date(timer.Year(), timer.Month(), timer.Day(), timer.Hour(), timer.Minute(), 0, 0, timer.Location())
-	return z.Unix()
-}
-
-// TimeZeroForToday 返回今日零点时间戳
-func TimeZeroForToday() (zeroTs int64) {
-	t := time.Now()
-	newTime := time.Date(t.Year(), t.Month(), t.Day(), 0, 0, 0, 0, t.Location())
-	return newTime.Unix()
-}
