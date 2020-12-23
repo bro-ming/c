@@ -4,9 +4,11 @@ import (
 	"bytes"
 	"compress/gzip"
 	"crypto/hmac"
+	"crypto/md5"
 	"crypto/sha256"
 	"encoding/base64"
 	"errors"
+	"fmt"
 	"io/ioutil"
 	"math/rand"
 	"reflect"
@@ -63,6 +65,19 @@ func GetRandomString(l int) string {
 	for i := 0; i < l; i++ {
 		result = append(result, bys[r.Intn(len(bys))])
 	}
+	time.Sleep(time.Millisecond * 1)
+	return string(result)
+}
+
+// GetRandomString
+func RandomNumber(l int) string {
+	bys := []byte("0123456789")
+	result := []byte{}
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	for i := 0; i < l; i++ {
+		result = append(result, bys[r.Intn(len(bys))])
+	}
+	time.Sleep(time.Millisecond * 1) 
 	return string(result)
 }
 
@@ -114,4 +129,10 @@ func SHA256Base64(secret, params string) (string, error) {
 	}
 	signByte := mac.Sum(nil)
 	return base64.StdEncoding.EncodeToString(signByte), nil
+}
+
+// GeneratePwd 密码生成
+func GeneratePwd(text, salt string) string {
+	mh := md5.Sum([]byte(text + salt))
+	return fmt.Sprintf("%+x", mh)
 }
