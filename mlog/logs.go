@@ -24,7 +24,7 @@ type Logger struct {
 }
 
 func init() {
-	logLevel := os.Getenv("GUEX_LOG_LEVEL")
+	logLevel := os.Getenv("MLOG_LEVEL")
 	var l Level
 	switch logLevel {
 	case "debug", "DEBUG":

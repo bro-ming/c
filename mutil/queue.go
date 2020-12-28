@@ -6,7 +6,7 @@ package mutil
 
 // the base node
 type Node struct {
-	Data []interface{}
+	Data interface{}
 	Next *Node
 }
 
@@ -17,7 +17,7 @@ type Queue struct {
 }
 
 // get last push data
-func (q *Queue) GetEnd() []interface{}{
+func (q *Queue) GetEnd() interface{}{
 	if q.End !=nil{
 		return q.End.Data
 	}
@@ -25,7 +25,7 @@ func (q *Queue) GetEnd() []interface{}{
 }
 
 // push data
-func (q *Queue) Push(data []interface{}) {
+func (q *Queue) Push(data interface{}) {
 	n := &Node{
 		Data: data,
 		Next: nil,
@@ -43,7 +43,7 @@ func (q *Queue) Push(data []interface{}) {
 }
 
 // Pop data
-func (q *Queue) Pop() ([]interface{}, bool) {
+func (q *Queue) Pop() (interface{}, bool) {
 	if q.Head == nil {
 		return nil, false
 	}

@@ -77,7 +77,7 @@ func RandomNumber(l int) string {
 	for i := 0; i < l; i++ {
 		result = append(result, bys[r.Intn(len(bys))])
 	}
-	time.Sleep(time.Millisecond * 1) 
+	time.Sleep(time.Millisecond * 1)
 	return string(result)
 }
 
