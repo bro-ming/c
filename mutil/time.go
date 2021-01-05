@@ -34,6 +34,13 @@ func TimeZeroToday() (zeroTs int64) {
 	return newTime.Unix()
 }
 
+// TimeZeroDayAttach 返回今天起的天数整点时间戳(附加条件)
+func TimeZeroDayAttach(n int) (ts time.Time) {
+	t := time.Now()
+	newTime := time.Date(t.Year(), t.Month(), t.Day()+n, 0, 0, 0, 0, t.Location())
+	return newTime
+}
+
 // GetHmsByTs 获取数据suo在的时 分 秒对应创建索引
 func TimeGetHmsByTs(ts int64) (int64, int64, int64) {
 	Ts := time.Unix(ts, ts)
