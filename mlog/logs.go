@@ -44,8 +44,7 @@ func init() {
 	}
 	SetLevel(l)
 
-	logFileName := os.Getenv("GUEX_LOG_FILE")
-	// logFileName := "./out.log"
+	logFileName := "./access.log"
 	if logFileName != "" {
 		f, err := os.OpenFile(logFileName, os.O_CREATE|os.O_RDWR|os.O_TRUNC, 0644)
 		if err == nil {
