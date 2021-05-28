@@ -19,6 +19,8 @@
 [文档（英文）](https://github.com/go-sql-driver/mysql/wiki)
 
 + [sqlx](https://github.com/jmoiron/sqlx)
+ 
++ [gorm/sql-driver](https://github.com/jinzhu/gorm/tree/master/dialects)
 
 + [squirrel](https://github.com/Masterminds/squirrel)
 
@@ -43,8 +45,6 @@
 [文档](https://godoc.org/github.com/robfig/cron#hdr-Usage)
 
 + [spf13/cobra](https://github.com/spf13/cobra)
- 
-+ [postgres](https://github.com/jinzhu/gorm/dialects/postgres)
  
 + [mongo/driver](https://github.com/mongodb/mongo-go-driver) -
   [官方文档（英文）](https://pkg.go.dev/go.mongodb.org/mongo-driver/mongo#Connect)
