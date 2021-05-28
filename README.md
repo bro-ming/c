@@ -10,7 +10,7 @@
 
 ## 常用的第三方包
 
-+ [julienschmidt/httprouter](https://github.com/julienschmidt/httprouter)
++ [httprouter](https://github.com/julienschmidt/httprouter)
 
 + [gin-gonic/gin](https://github.com/gin-gonic/gin) -
 [文档](https://gin-gonic.com/zh-cn/docs/)
@@ -27,9 +27,9 @@
 
 + [json-iterator](https://github.com/json-iterator/go)
   
-+ [eth/rpcclient]("github.com/gochain/gochain/v3/rpc")
++ [eth/rpcclient](https://github.com/gochain/gochain)
   
-+ [btc/rpcclient]("github.com/btcsuite/btcd/rpcclient") 
++ [btc/rpcclient](https://github.com/btcsuite/btcd) 
   
 + [ethereum/go-ethereum](https://github.com/ethereum/go-ethereum) -
 [官方文档（英文）](https://geth.ethereum.org/docs/) -
@@ -44,10 +44,7 @@
 
 + [spf13/cobra](https://github.com/spf13/cobra)
  
-+ [postgres]("github.com/jinzhu/gorm/dialects/postgres")
++ [postgres](https://github.com/jinzhu/gorm/dialects/postgres)
  
-+ [mongo/driver]("go.mongodb.org/mongo-driver/mongo") 
-    + [mongo/options]("go.mongodb.org/mongo-driver/mongo/options")
-    + [mongo/primitive]("go.mongodb.org/mongo-driver/bson/primitive")
-    + [mongo/bson]("go.mongodb.org/mongo-driver/bson")        
- 
++ [mongo/driver](https://github.com/mongodb/mongo-go-driver) -
+  [官方文档（英文）](https://pkg.go.dev/go.mongodb.org/mongo-driver/mongo#Connect)
